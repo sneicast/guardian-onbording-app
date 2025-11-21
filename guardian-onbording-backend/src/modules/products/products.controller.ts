@@ -1,10 +1,12 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, UseInterceptors } from '@nestjs/common';
 import { ProductsService } from './products.service';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @Controller('products')
 export class ProductsController {
     constructor(private readonly productsService: ProductsService){}
 
+    @UseInterceptors(CacheInterceptor)
     @Get()
     findAll(){
         return this.productsService.findAll();

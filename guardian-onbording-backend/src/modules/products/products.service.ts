@@ -5,6 +5,7 @@ import { products } from './products.data';
 @Injectable()
 export class ProductsService {
     findAll(): Product[] {
+        console.log('🔥 CARGANDO DESDE LA FUNCIÓN REAL (NO CACHÉ)');
         return products;
     }
 
