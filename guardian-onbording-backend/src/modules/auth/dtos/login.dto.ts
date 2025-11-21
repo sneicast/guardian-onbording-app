@@ -14,7 +14,3 @@ export class LoginDto {
     @MaxLength(20, { message: 'La contraseña debe tener menos de 20 caracteres' })
     password: string;
 }
-
-export class LoginResponseDto {
-    accessToken: string;
-}
