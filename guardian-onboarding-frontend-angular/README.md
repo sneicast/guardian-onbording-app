@@ -1,6 +1,6 @@
 # Guardian Onboarding
 
-Aplicación web desarrollada con Angular para la gestión de onboarding de clientes del Banco Caja Social.
+Aplicación web desarrollada con Angular para la gestión de onboarding de clientes.
 
 ## Requisitos Previos
 
