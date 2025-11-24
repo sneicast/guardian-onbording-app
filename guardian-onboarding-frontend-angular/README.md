@@ -1,59 +1,88 @@
-# GuardianOnboarding
+# Guardian Onboarding
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Aplicación web desarrollada con Angular para la gestión de onboarding de clientes del Banco Caja Social.
 
-## Development server
+## Requisitos Previos
 
-To start a local development server, run:
+- Node.js (versión 20 o superior)
+
+## Instalación
+
+1. Clonar el repositorio o navegar a la carpeta del proyecto:
+```bash
+cd guardian-onboarding-frontend-angular
+```
+
+2. Instalar las dependencias:
+```bash
+npm install
+```
+
+## Configuración
+
+### Variables de Entorno
+
+El proyecto utiliza un archivo de configuración de entorno ubicado en `src/environments/environment.ts`.
+
+Para cambiar la URL del backend, edita el archivo:
+
+```typescript
+export const environment = {
+    production: false,
+    apiUrl: 'http://localhost:3001'  // Cambia esta URL según tu configuración
+};
+```
+
+**Nota:** Si el backend está corriendo en un puerto diferente o en otro servidor, actualiza el valor de `apiUrl` en este archivo.
+
+## Ejecutar el Proyecto
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+npm start
+```
+
+O también puedes usar:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación estará disponible en `http://localhost:4200`
 
-## Code scaffolding
+## Estructura de la Aplicación
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Páginas
 
-```bash
-ng generate component component-name
-```
+La aplicación cuenta con las siguientes páginas:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+#### 1. Login (`/login`)
+Página de autenticación donde los usuarios pueden iniciar sesión con su usuario y contraseña. Al autenticarse exitosamente, se guarda el token JWT en `sessionStorage` y se redirige a la página de productos.
 
-```bash
-ng generate --help
-```
+![Login](screenshots/login.png)
 
-## Building
+#### 2. Lista y Detalle de Productos (`/admin/products`)
+Página que muestra una tabla con todos los productos disponibles. Cada producto muestra su ID, nombre y moneda. Al hacer clic en "Ver Detalle", se abre un modal con la información completa del producto.
 
-To build the project run:
+![Productos](screenshots/products.png)
 
-```bash
-ng build
-```
+#### 3. Registro de Clientes (`/admin/onboarding`)
+Formulario para registrar nuevos clientes. Permite ingresar:
+- Nombre completo
+- Número de documento
+- Correo electrónico
+- Monto para apertura
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Al completar el registro exitosamente, se muestra un modal con el ID de onboarding y el estado del registro.
 
-## Running unit tests
+![Onboarding](screenshots/onboarding.png)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
+## Tecnologías Utilizadas
 
-## Running end-to-end tests
+- **Angular 21** - Framework principal
+- **TypeScript** - Lenguaje de programación
+- **Tailwind CSS** - Framework de estilos
+- **RxJS** - Programación reactiva
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

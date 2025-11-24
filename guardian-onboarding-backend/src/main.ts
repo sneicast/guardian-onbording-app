@@ -11,6 +11,11 @@ async function bootstrap() {
       whitelist: true,
     })
   )
+  app.enableCors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'pragma', 'cache-control'],
+  });
 
   await app.listen(process.env.PORT ?? 3001);
 }

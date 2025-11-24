@@ -15,7 +15,9 @@ export class AuthService {
     });
 
     if (!response.ok) {
-      throw new Error('Error en el login');
+      const errorData = await response.json().catch(() => ({}));
+      const errorMessage = errorData.message || `Error ${response.status}: ${response.statusText}`;
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();

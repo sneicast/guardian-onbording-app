@@ -23,6 +23,8 @@ export class LoginPage {
       await this.authService.login(this.username, this.password);
       this.router.navigate(['/admin/products']);
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido al iniciar sesión';
+      alert(errorMessage);
       console.error('Error en login:', error);
     }
   }

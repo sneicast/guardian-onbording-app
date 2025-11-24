@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-layout',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.css',
 })
 export class AdminLayout {
+  constructor(private router: Router) {}
 
+  logout() {
+    sessionStorage.removeItem('accessToken');
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,1 +1,95 @@
-<p>products-page works!</p>
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Lista de Productos</h2>
+  
+  @if (loading) {
+    <div class="text-center py-8">
+      <p class="text-gray-600">Cargando productos...</p>
+    </div>
+  } @else if (error) {
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      <p class="font-bold">Error</p>
+      <p>{{ error }}</p>
+      <button
+        (click)="loadProducts()"
+        class="mt-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+      >
+        Reintentar
+      </button>
+    </div>
+  } @else {
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Moneda</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          @if (products.length === 0) {
+            <tr>
+              <td colspan="4" class="px-6 py-4 text-center text-gray-500">No hay productos disponibles</td>
+            </tr>
+          } @else {
+            @for (product of products; track product.id) {
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ product.id }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ product.name }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ product.currency }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                  <button
+                    type="button"
+                    (click)="openModal(product.id)"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors cursor-pointer inline-block"
+                  >
+                    Ver Detalle
+                  </button>
+                </td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+
+  @if (showModal && selectedProduct) {
+    <div class="fixed inset-0 bg-gradient-to-br from-gray-900/40 via-gray-800/30 to-gray-900/40 backdrop-blur-sm flex items-center justify-center z-50 p-4" (click)="closeModal()">
+      <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4" (click)="$event.stopPropagation()">
+        <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-800">Detalle del Producto</h3>
+          <button
+            (click)="closeModal()"
+            class="text-gray-400 hover:text-gray-600 text-2xl font-light w-6 h-6 flex items-center justify-center"
+          >
+            ×
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <span class="text-sm font-medium text-gray-600">ID:</span>
+            <span class="text-sm font-semibold text-gray-900">{{ selectedProduct.id }}</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b border-gray-100">
+            <span class="text-sm font-medium text-gray-600">Nombre:</span>
+            <span class="text-sm font-semibold text-gray-900">{{ selectedProduct.name }}</span>
+          </div>
+          <div class="flex justify-between items-center py-2">
+            <span class="text-sm font-medium text-gray-600">Moneda:</span>
+            <span class="text-sm font-semibold text-gray-900">{{ selectedProduct.currency }}</span>
+          </div>
+        </div>
+        <div class="px-6 py-4 border-t border-gray-200 flex justify-end">
+          <button
+            (click)="closeModal()"
+            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
