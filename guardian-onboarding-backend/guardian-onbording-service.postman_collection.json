@@ -15,11 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/health",
+							"raw": "localhost:3001/health",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"health"
 							]
@@ -32,11 +32,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:3000/health",
+									"raw": "localhost:3001/health",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"health"
 									]
@@ -115,11 +115,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/auth/login",
+							"raw": "localhost:3001/auth/login",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"auth",
 								"login"
@@ -142,11 +142,11 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/auth/login",
+									"raw": "localhost:3001/auth/login",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"auth",
 										"login"
@@ -198,22 +198,15 @@
 			"item": [
 				{
 					"name": "Get All products",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"sns\",\n    \"password\": \"asaa\"\n}"
-						},
 						"url": {
-							"raw": "localhost:3000/products",
+							"raw": "localhost:3001/products",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"products"
 							]
@@ -225,16 +218,12 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"username\": \"sns\",\n    \"password\": \"asaa\"\n}"
-								},
 								"url": {
-									"raw": "localhost:3000/products",
+									"raw": "localhost:3001/products",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"products"
 									]
@@ -284,22 +273,15 @@
 				},
 				{
 					"name": "get detailt Product",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"sns\",\n    \"password\": \"asaa\"\n}"
-						},
 						"url": {
-							"raw": "localhost:3000/products/:productId",
+							"raw": "localhost:3001/products/:productId",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"products",
 								":productId"
@@ -318,16 +300,12 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"username\": \"sns\",\n    \"password\": \"asaa\"\n}"
-								},
 								"url": {
-									"raw": "localhost:3000/products/:productId",
+									"raw": "localhost:3001/products/:productId",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"products",
 										":productId"
@@ -381,16 +359,12 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"username\": \"sns\",\n    \"password\": \"asaa\"\n}"
-								},
 								"url": {
-									"raw": "localhost:3000/products/:productId",
+									"raw": "localhost:3001/products/:productId",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"products",
 										":productId"
@@ -471,11 +445,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/onboarding",
+							"raw": "localhost:3001/onboarding",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"onboarding"
 							]
@@ -497,11 +471,11 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/onboarding",
+									"raw": "localhost:3001/onboarding",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"onboarding"
 									]
@@ -558,11 +532,11 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/onboarding",
+									"raw": "localhost:3001/onboarding",
 									"host": [
 										"localhost"
 									],
-									"port": "3000",
+									"port": "3001",
 									"path": [
 										"onboarding"
 									]

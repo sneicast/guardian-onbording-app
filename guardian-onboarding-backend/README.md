@@ -23,7 +23,7 @@ La colección se encuentra en la raíz del proyecto: [`./guardian-onbording-serv
    ```bash
    npm run start:dev
    ```
-5. La API estará disponible en `http://localhost:3000`.
+5. La API estará disponible en `http://localhost:3001`.
 
 ## Estructura breve
 - `src/modules/auth` – autenticación y emisión de tokens.
